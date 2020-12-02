@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       <bean id="studentDao" class="com.bdqn.dao.StudentDaoImpl">
+<!--    不用name指定要按顺序传参，也可以用index决定参数顺序从0开始         -->
+<!--也可以按type属性决定参数类型 -->
+              <constructor-arg name="name">
+<!--          如果字符串包含特殊符号，使用CDATA包裹起来   -->
+                     <value><![CDATA[<张三>]]></value>
+              </constructor-arg>
+              <constructor-arg name="age" value="19"></constructor-arg>
+              <constructor-arg name="sex" value="男"></constructor-arg>
+       </bean>
+</beans>
