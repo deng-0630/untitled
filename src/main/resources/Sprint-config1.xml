@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean class="com.bdqn.util.Car" id="car1">
+        <property name="name" value="宝马"></property>
+        <property name="type" value="x1"></property>
+    </bean>
+    <bean class="com.bdqn.util.Car" id="car2">
+        <property name="name" value="奔驰"></property>
+        <property name="type" value="c200"></property>
+    </bean>
+    <bean class="com.bdqn.util.Car" id="car3">
+        <property name="name" value="蓝克雷斯"></property>
+        <property name="type" value="es5科幻"></property>
+    </bean>
+    <bean id="person" class="com.bdqn.util.Person">
+        <property name="cars">
+            <map>
+                <entry key="Car" value-ref="car1" ></entry>
+                <entry key="Car" value-ref="car2" ></entry>
+                <entry key="Car" value-ref="car3" ></entry>
+            </map>
+        </property>
+    </bean>
+</beans>
