@@ -5,6 +5,8 @@
     <bean class="com.bdqn.util.Car" id="car1">
         <property name="name" value="宝马"></property>
         <property name="type" value="x1"></property>
+        <constructor-arg name="name" value="宝马2"></constructor-arg>
+        <constructor-arg name="type" value="x13"></constructor-arg>
     </bean>
     <bean class="com.bdqn.util.Car" id="car2">
         <property name="name" value="奔驰"></property>
@@ -13,6 +15,16 @@
     <bean class="com.bdqn.util.Car" id="car3">
         <property name="name" value="蓝克雷斯"></property>
         <property name="type" value="es5科幻"></property>
+    </bean>
+    <bean id="de" class="com.bdqn.util.DB">
+        <property name="prop">
+            <props>
+                <prop key="driver">com.mysql.jdbc.Driver</prop>
+                <prop key="uname">root</prop>
+                <prop key="pwd">root</prop>
+                <prop key="url">jdbc:mysql://localhost:3306/myschool</prop>
+            </props>
+        </property>
     </bean>
     <bean id="person" class="com.bdqn.util.Person">
         <property name="cars">

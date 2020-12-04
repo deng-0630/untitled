@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+<!--        可以用abstract=true 指定模板，模板不能实例化，只能被继承-->
+        <bean id="carmodel" class="com.bdqn.util.Car" abstract="true"></bean>
+
+
+        <bean parent="carmodel" id="car" p:name="奥迪" p:type="a6"></bean>
+
+<!--        <bean id="car" class="com.bdqn.util.Car" p:name="本田" p:type="a4"></bean>-->
+        <bean id="person" class="com.bdqn.util.Person" autowire="byType"></bean>
+
+<!--        使用context:property-placeholder属性指定外部属性配置文件-->
+<!--        通过${属性名}的方式来获取外部属性配置文件的值-->
+        <context:property-placeholder location="classpath:db.properties"></context:property-placeholder>
+        <bean class="com.bdqn.util.DB" id="db" p:driver="${driver}" p:pwd="${pwd}" p:url="${url}" p:userName="${uname}">
+                <property name="prop">
+                        <props>
+                                <prop key="uname">${uname}</prop>
+                                <prop key="pwd">${pwd}</prop>
+                                <prop key="url">${url}</prop>
+                                <prop key="driver">${driver}</prop>
+                        </props>
+                </property>
+        </bean>
+</beans>
