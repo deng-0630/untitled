@@ -11,11 +11,21 @@ public class Perea {
     @Autowired
     private Car car;
 
+    private Animal animal;
     private String name;
     List<String> list;
     Properties properties;
 
+    public Animal getAnimal() {
+        return animal;
+    }
+    @Autowired(required = false)
+    public void setAnimal(Animal animal) {
+        this.animal = animal;
+    }
+
     public void show(){
+        animal.show();
         car.show();
     }
 
