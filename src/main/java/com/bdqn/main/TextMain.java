@@ -10,8 +10,9 @@ public class TextMain {
     public static void main(String[] args) {
         ApplicationContext apl=new ClassPathXmlApplicationContext("Sprint-config4.xml");
         Perea perea = (Perea) apl.getBean("perea");
-        Perea perea1 = (Perea) apl.getBean("perea1");
-        System.out.println(perea1);
+        Perea perea2 = (Perea) apl.getBean("perea2" +
+                "");
+        System.out.println(perea2);
 
         System.out.println(perea);
     }

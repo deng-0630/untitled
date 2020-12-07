@@ -10,4 +10,7 @@
         <bean id="perea1" factory-bean="factory1" factory-method="getPerea">
             <constructor-arg value="p3"></constructor-arg>
         </bean>
+    <bean id="perea2" class="com.bdqn.eam.Mybean">
+        <property name="bname" value="赵柳"></property>
+    </bean>
 </beans>
